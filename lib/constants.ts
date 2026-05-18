@@ -35,6 +35,8 @@ export interface ContactLink {
   value: string;
 }
 
+export const OWNER_YOUTUBE_URL: string = "http://www.youtube.com/@itelediconstudio";
+
 function createMovie(movie: Omit<Movie, "created_at"> & { created_at?: string }): Movie {
   return {
     created_at: movie.created_at ?? "2026-01-01T00:00:00.000Z",
@@ -237,7 +239,7 @@ export const CONTACT_LINKS: ContactLink[] = [
   {
     label: "YouTube",
     value: "Iteledicon Studio",
-    href: "https://youtube.com/@iteledicon01",
+    href: OWNER_YOUTUBE_URL,
   },
 ];
 

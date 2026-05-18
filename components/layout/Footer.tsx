@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactElement } from "react";
 
 import GoldDivider from "@/components/ui/GoldDivider";
+import { OWNER_YOUTUBE_URL } from "@/lib/constants";
 import type { NavLink } from "@/lib/types";
 
 const quickLinks: NavLink[] = [
@@ -17,7 +18,7 @@ const quickLinks: NavLink[] = [
 const socialLinks: NavLink[] = [
   { label: "Instagram", href: "https://instagram.com/dicon_schoolofpfa", isExternal: true },
   { label: "Owner Instagram", href: "https://instagram.com/iteledicon01", isExternal: true },
-  { label: "YouTube", href: "https://youtube.com/@iteledicon01", isExternal: true },
+  { label: "YouTube", href: OWNER_YOUTUBE_URL, isExternal: true },
 ];
 
 export default function Footer(): ReactElement {
