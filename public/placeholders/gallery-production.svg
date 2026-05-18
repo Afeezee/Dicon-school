@@ -1,0 +1,10 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#0A0A0A"/>
+  <rect x="84" y="84" width="1032" height="1332" rx="36" fill="#141414" stroke="#C8A84B" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="180" y="248" width="484" height="540" rx="28" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <rect x="722" y="308" width="280" height="280" rx="140" fill="#C8A84B" fill-opacity="0.14"/>
+  <rect x="748" y="334" width="228" height="228" rx="114" stroke="#E8C96A" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="180" y="930" fill="#E8C96A" font-family="Georgia, serif" font-size="68" font-style="italic">On Set Craft</text>
+  <text x="180" y="1012" fill="#F0E8D0" font-family="Georgia, serif" font-size="34">Blocking, lighting, camera flow, and production discipline</text>
+  <text x="180" y="1204" fill="#F0E8D0" font-family="Impact, sans-serif" font-size="82" letter-spacing="8">PRODUCTION</text>
+</svg>

@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #fff6e7;
+  --surface: #12161c;
+  --card: #17110e;
+  --border: #303640;
+  --gold: #c8a84b;
+  --gold-light: #f1d98e;
+  --gold-dark: #9a7220;
+  --gold-muted: #ad9150;
+  --crimson: #b22222;
+  --crimson-dark: #821616;
+  --text-muted: #dacdb4;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  --font-accent: "Bebas Neue", Impact, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(232, 201, 106, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(178, 34, 34, 0.16), transparent 26%),
+    linear-gradient(180deg, #050608 0%, #090b10 32%, #0a0a0a 100%);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  background-attachment: fixed;
+}
+
+* {
+  border-color: var(--border);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+* {
+  scrollbar-color: var(--gold) var(--background);
+  scrollbar-width: thin;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--background);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section-padding {
+    @apply px-6 py-12 lg:px-24 lg:py-20;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  .gold-border-glow {
+    box-shadow: 0 0 0 1px rgba(241, 217, 142, 0.18), 0 24px 70px rgba(200, 168, 75, 0.18);
+  }
+
+  .glass-panel {
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05) 34%, rgba(12, 12, 12, 0.72) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+  }
+
+  .glass-panel-strong {
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08) 28%, rgba(7, 7, 7, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 28px 100px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(28px);
+  }
+
+  .shadow-lifted {
+    box-shadow: 0 26px 90px rgba(0, 0, 0, 0.34);
+  }
+
+  .text-shadow-hero {
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.48);
+  }
+}
