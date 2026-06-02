@@ -77,7 +77,7 @@ export default function Footer(): ReactElement {
 
         <div className="flex flex-col gap-3 text-sm uppercase tracking-[0.24em] text-dicon-muted md:flex-row md:items-center md:justify-between">
           <p>{`© ${currentYear} D'Icon School of Performing Arts`}</p>
-          <p>Where Talent Becomes Legacy</p>
+          <p>We are the movie maker</p>
         </div>
         </div>
       </div>

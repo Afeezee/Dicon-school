@@ -55,7 +55,7 @@ export default function Navbar(): ReactElement {
             {"D'Icon School"}
           </span>
           <span className="font-display text-lg italic text-[#fff5df] transition group-hover:text-gold-light">
-            Where Talent Becomes Legacy
+            We are the movie maker
           </span>
         </Link>
 

@@ -35,6 +35,16 @@ export interface ContactLink {
   value: string;
 }
 
+export interface FounderRecognition {
+  award: string;
+  awardUrl?: string;
+  category: string;
+  film?: string;
+  filmUrl?: string;
+  result: "Nominated" | "Won";
+  year: string;
+}
+
 export const OWNER_YOUTUBE_URL: string = "http://www.youtube.com/@itelediconstudio";
 
 function createMovie(movie: Omit<Movie, "created_at"> & { created_at?: string }): Movie {
@@ -167,10 +177,57 @@ export const FOUNDER_BIO_PARAGRAPHS: string[] = [
   "His influence widened again with Jagun Jagun on Netflix in 2023 and the record-breaking Koleoso phenomenon in 2025. Alongside those productions, he built D'Icon School of Performing Arts to ensure that the next generation of Yoruba talent receives real industry preparation, not empty prestige.",
 ];
 
-export const FOUNDER_AWARDS: string[] = [
-  "City People Best Supporting Actor",
-  "City People Director of the Year",
-  "BON Best Actor in Lead Role 2020",
+export const FOUNDER_RECOGNITIONS: FounderRecognition[] = [
+  {
+    year: "2019",
+    award: "City People Entertainment Awards",
+    awardUrl: "https://en.wikipedia.org/wiki/City_People_Entertainment_Awards",
+    category: "Producer of the Year",
+    film: "Kesari",
+    filmUrl: "https://en.wikipedia.org/wiki/Kesari_(2018_film)",
+    result: "Won",
+  },
+  {
+    year: "2019",
+    award: "City People Entertainment Awards",
+    awardUrl: "https://en.wikipedia.org/wiki/City_People_Entertainment_Awards",
+    category: "Best Movie of the Year",
+    film: "Kesari",
+    filmUrl: "https://en.wikipedia.org/wiki/Kesari_(2018_film)",
+    result: "Won",
+  },
+  {
+    year: "2019",
+    award: "Best of Nollywood Awards",
+    awardUrl: "https://en.wikipedia.org/wiki/Best_of_Nollywood_Awards",
+    category: "Best Actor in a Lead Role",
+    film: "Return of Kesari",
+    result: "Won",
+  },
+  {
+    year: "2020",
+    award: "Best of Nollywood Awards",
+    awardUrl: "https://en.wikipedia.org/wiki/Best_of_Nollywood_Awards",
+    category: "Best Actor in a Lead Role (Yoruba)",
+    film: "Lucifer",
+    result: "Won",
+  },
+  {
+    year: "2024",
+    award: "Africa Magic Viewers' Choice Awards",
+    awardUrl: "https://en.wikipedia.org/wiki/2024_Africa_Magic_Viewers%27_Choice_Awards",
+    category: "Best Supporting Actor",
+    film: "Jagun Jagun",
+    filmUrl: "https://en.wikipedia.org/wiki/Jagun_Jagun",
+    result: "Nominated",
+  },
+  {
+    year: "2025",
+    award: "Emperor Awards",
+    category: "Nollywood Producer of the Year",
+    film: "Koleoso",
+    result: "Won",
+  },
 ];
 
 export const FOUNDER_QUOTE: string = "I always want my students to go higher than me.";

@@ -3,10 +3,22 @@
 import { motion } from "framer-motion";
 import type { ReactElement } from "react";
 
-import { FOUNDER_AWARDS, FOUNDER_BIO_PARAGRAPHS, FOUNDER_QUOTE } from "@/lib/constants";
+import { FOUNDER_BIO_PARAGRAPHS, FOUNDER_QUOTE, FOUNDER_RECOGNITIONS, type FounderRecognition } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import FounderPortrait from "@/components/ui/FounderPortrait";
+
+function RecognitionLink({ href, label }: { href?: string; label: string }): ReactElement {
+  if (!href) {
+    return <span className="text-dicon-text">{label}</span>;
+  }
+
+  return (
+    <a className="transition hover:text-gold-light" href={href} rel="noreferrer" target="_blank">
+      {label}
+    </a>
+  );
+}
 
 export default function BiographySection(): ReactElement {
   return (
@@ -20,7 +32,7 @@ export default function BiographySection(): ReactElement {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <Card className="overflow-hidden bg-[radial-gradient(circle_at_top,rgba(232,201,106,0.16),transparent_26%),linear-gradient(180deg,#17110b_0%,#0a0a0a_100%)] p-8">
-            <CardContent className="space-y-8 p-0">
+            <CardContent className="p-0">
               <FounderPortrait
                 className="aspect-[4/5] rounded-[1.75rem] border border-gold/25 bg-black/30"
                 imageClassName="rounded-[1.75rem]"
@@ -28,14 +40,6 @@ export default function BiographySection(): ReactElement {
                 priority={true}
                 sizes="(min-width: 1024px) 30vw, 90vw"
               />
-              <div className="space-y-4">
-                <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-light">Awards</p>
-                <div className="flex flex-wrap gap-3">
-                  {FOUNDER_AWARDS.map((award: string): ReactElement => (
-                    <Badge key={award}>{award}</Badge>
-                  ))}
-                </div>
-              </div>
             </CardContent>
           </Card>
         </motion.div>
@@ -52,6 +56,46 @@ export default function BiographySection(): ReactElement {
               {paragraph}
             </p>
           ))}
+
+          <div className="rounded-[1.75rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(232,201,106,0.12),transparent_38%),rgba(12,12,12,0.78)] p-6">
+            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div className="space-y-2">
+                <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-light">Awards and nominations</p>
+                <p className="max-w-2xl text-lg leading-relaxed text-dicon-muted">
+                  A concise record of Ibrahim Yekini&apos;s acting and producing recognition across key releases.
+                </p>
+              </div>
+              <Badge className="w-fit" variant="secondary">
+                {`${FOUNDER_RECOGNITIONS.length} recognitions`}
+              </Badge>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {FOUNDER_RECOGNITIONS.map((recognition: FounderRecognition): ReactElement => (
+                <Card className="border-white/10 bg-black/25 shadow-none" key={`${recognition.year}-${recognition.award}-${recognition.category}`}>
+                  <CardContent className="space-y-3 p-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="font-accent text-sm uppercase tracking-[0.24em] text-gold-light">{recognition.year}</p>
+                      <Badge variant={recognition.result === "Won" ? "default" : "outline"}>{recognition.result}</Badge>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="font-display text-xl leading-tight text-dicon-text">
+                        <RecognitionLink href={recognition.awardUrl} label={recognition.award} />
+                      </p>
+                      <p className="text-sm uppercase tracking-[0.18em] text-[#e6d2a0]">{recognition.category}</p>
+                    </div>
+
+                    {recognition.film ? (
+                      <p className="text-base leading-relaxed text-dicon-muted">
+                        Film: <RecognitionLink href={recognition.filmUrl} label={recognition.film} />
+                      </p>
+                    ) : null}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
 
           <blockquote className="rounded-[1.75rem] border-l-4 border-gold bg-dicon-card px-6 py-6 font-display text-3xl italic leading-snug text-gold-light">
             “{FOUNDER_QUOTE}”
