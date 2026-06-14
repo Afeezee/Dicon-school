@@ -112,7 +112,7 @@ export default function AdmissionForm(): ReactElement {
     return (
       <section className="section-padding pt-8">
         <div className="mx-auto max-w-5xl">
-          <Card className="border-gold/35 bg-[linear-gradient(145deg,rgba(200,168,75,0.12),rgba(20,20,20,1))]">
+          <Card className="border-gold/35 bg-[linear-gradient(145deg,rgba(200,168,75,0.08),rgba(245,240,232,1))] dark:bg-[linear-gradient(145deg,rgba(200,168,75,0.12),rgba(20,20,20,1))]">
             <CardContent className="flex flex-col items-center gap-5 p-10 text-center">
               <CheckCircle2 className="h-16 w-16 text-gold-light" />
               <CardTitle>Application Received!</CardTitle>
@@ -134,6 +134,47 @@ export default function AdmissionForm(): ReactElement {
           tag="Admissions"
           title="Begin Your *Application*"
         />
+
+        <Card className="border-gold/25 bg-[linear-gradient(145deg,rgba(200,168,75,0.06),rgba(245,240,232,0.95))] dark:bg-[linear-gradient(145deg,rgba(200,168,75,0.08),rgba(20,20,20,0.9))]">
+          <CardContent className="p-6 md:p-8 space-y-6">
+            <div className="text-center space-y-2">
+              <h3 className="font-display text-2xl md:text-3xl text-gold-light">Welcome to D&apos;Icon School of Performing Arts</h3>
+              <p className="text-dicon-muted text-base italic">Where we grow with love, learn with peace, and perform with purpose.</p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-xl border border-gold/15 bg-gold/[0.06] dark:bg-black/40 p-4 text-center space-y-1">
+                <p className="font-accent text-xs uppercase tracking-[0.2em] text-gold">School Fees (Standard)</p>
+                <p className="font-display text-2xl text-dicon-text">{"₦"}400,000</p>
+              </div>
+              <div className="rounded-xl border border-gold/15 bg-gold/[0.06] dark:bg-black/40 p-4 text-center space-y-1">
+                <p className="font-accent text-xs uppercase tracking-[0.2em] text-gold">VIP Package</p>
+                <p className="font-display text-2xl text-dicon-text">{"₦"}600,000</p>
+              </div>
+              <div className="rounded-xl border border-gold/15 bg-gold/[0.06] dark:bg-black/40 p-4 text-center space-y-1">
+                <p className="font-accent text-xs uppercase tracking-[0.2em] text-gold">Duration</p>
+                <p className="font-display text-2xl text-dicon-text">2 Years</p>
+              </div>
+              <div className="rounded-xl border border-gold/15 bg-gold/[0.06] dark:bg-black/40 p-4 text-center space-y-1">
+                <p className="font-accent text-xs uppercase tracking-[0.2em] text-gold">Rehearsals</p>
+                <p className="font-display text-2xl text-dicon-text">Once a Month</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 rounded-xl border border-gold/10 bg-gold/[0.04] dark:bg-black/30 p-4 md:p-5">
+              <h4 className="font-accent text-sm uppercase tracking-[0.2em] text-gold">Payment Plan</h4>
+              <p className="text-sm leading-relaxed text-dicon-muted">
+                You can pay in two installments, but a minimum of <span className="text-dicon-text font-medium">70%</span> must be paid upfront if you&apos;re not paying in full.
+              </p>
+              <div className="border-t border-gold/10 pt-3">
+                <h4 className="font-accent text-sm uppercase tracking-[0.2em] text-gold mb-1">VIP Student Package</h4>
+                <p className="text-sm leading-relaxed text-dicon-muted">
+                  The difference between VIP and standard students will be explained directly by the CEO, Ibrahim Yekini Bakare.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         <Card>
           <CardHeader>

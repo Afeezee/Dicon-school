@@ -45,7 +45,7 @@ export default function HeroSection({ primaryCtaLabel, secondaryCtaLabel }: Hero
   const heroVideoSrc: string = "/media/hero/koleoso-hero-v2.mp4";
 
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-end overflow-hidden border-b border-white/10">
+    <section className="dark relative flex min-h-[calc(100vh-5rem)] items-end overflow-hidden border-b border-white/10">
       <div className="absolute inset-0">
         <video
           aria-hidden={true}
@@ -99,10 +99,10 @@ export default function HeroSection({ primaryCtaLabel, secondaryCtaLabel }: Hero
                 </DialogTrigger>
                 <DialogContent className="max-w-5xl">
                   <DialogHeader>
-                    <DialogTitle>Jagun Jagun Trailer</DialogTitle>
-                    <DialogDescription>Experience the cinematic scale that defines Ibrahim Yekini&apos;s modern screen legacy.</DialogDescription>
+                    <DialogTitle>Koleoso 2025</DialogTitle>
+                    <DialogDescription>Watch the official trailer for Koleoso — Ibrahim Yekini&apos;s latest cinematic masterpiece.</DialogDescription>
                   </DialogHeader>
-                  <LazyYouTube className="w-full" title="Jagun Jagun Trailer" videoId={VIDEO_IDS.jagun_jagun} />
+                  <LazyYouTube className="w-full" title="Koleoso 2025 Trailer" videoId={VIDEO_IDS.koleoso_pt1} />
                 </DialogContent>
               </Dialog>
             </motion.div>

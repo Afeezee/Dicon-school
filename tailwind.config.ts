@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,21 +12,21 @@ const config: Config = {
       colors: {
         gold: {
           DEFAULT: "#C8A84B",
-          light: "#E8C96A",
+          light: "var(--gold-light)",
           dark: "#8B6914",
-          muted: "#7A6530",
+          muted: "var(--gold-muted)",
         },
         crimson: {
           DEFAULT: "#8B1A1A",
           light: "#B22222",
         },
         dicon: {
-          bg: "#0A0A0A",
-          surface: "#141414",
-          card: "#1A1A1A",
-          border: "#2A2A2A",
-          text: "#F0E8D0",
-          muted: "#9A8870",
+          bg: "var(--dicon-bg)",
+          surface: "var(--dicon-surface)",
+          card: "var(--dicon-card)",
+          border: "var(--dicon-border)",
+          text: "var(--dicon-text)",
+          muted: "var(--dicon-muted)",
         },
       },
       fontFamily: {

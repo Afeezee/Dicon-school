@@ -32,7 +32,7 @@ export default function AlumniCard({ alumnus }: AlumniCardProps): ReactElement {
       <Card className={`h-full ${alumnus.is_featured ? "border-t-2 border-t-gold/65" : ""}`}>
         <CardContent className="flex h-full flex-col gap-5 p-6">
           <div className="flex items-start justify-between gap-4">
-            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/10 bg-[linear-gradient(135deg,#E8C96A,#C8A84B,#8B6914)]">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-black/[0.08] dark:border-white/10 bg-[linear-gradient(135deg,#E8C96A,#C8A84B,#8B6914)]">
               {alumnus.avatar_url ? (
                 <Image alt={alumnus.full_name} className="object-cover" fill sizes="64px" src={alumnus.avatar_url} />
               ) : (

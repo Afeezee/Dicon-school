@@ -7,8 +7,15 @@ export interface FeatureStat {
 }
 
 export interface Programme {
+  curriculum: string[];
   description: string;
+  detailedDescription: string[];
+  duration: string;
+  heroImage: string;
+  idealFor: string;
+  learningOutcomes: string[];
   name: string;
+  slug: string;
   summary: string;
   value: string;
 }
@@ -99,30 +106,138 @@ export const PROGRAMMES: Programme[] = [
   {
     name: "Acting & Performance",
     value: "Acting & Performance",
+    slug: "acting-and-performance",
+    heroImage: "/media/programmes/acting-on-set-hero.jpg",
     summary: "Train your screen presence, emotional range, diction, blocking, and camera awareness.",
     description:
       "Students build disciplined performance habits through scene study, character work, improvisation, and live on-set rehearsal built around Yoruba film storytelling.",
+    detailedDescription: [
+      "Acting at D'Icon School is not about theory — it is about doing. From the first week, students are placed in front of cameras, on marks, and inside scenes that demand real emotional commitment. This is how Ibrahim Yekini (Itele D'Icon) himself trained, and this is how every graduate of this programme learns to perform.",
+      "The programme is rooted in the tradition of Yoruba screen performance — a tradition that values intense emotion, physical command, expressive diction, and audience connection. Students study under the direct guidance of Itele and his working collaborators, rehearsing scenes drawn from actual productions and original material.",
+      "Class sessions are structured around scene study, character analysis, improvisation drills, and blocking exercises. Students are expected to come prepared, stay disciplined, and push beyond comfort zones. Live rehearsal recordings are reviewed for feedback, and every student performs in at least one production-grade scene before completing the programme.",
+    ],
+    curriculum: [
+      "Scene study and character development",
+      "Yoruba diction, tone, and vocal projection",
+      "On-camera blocking and spatial awareness",
+      "Emotional range and method acting techniques",
+      "Improvisation and spontaneous performance",
+      "Movement, physicality, and stage combat basics",
+      "Rehearsal discipline and script breakdown",
+      "Working with directors — taking and executing notes",
+    ],
+    learningOutcomes: [
+      "Deliver emotionally grounded performances on camera",
+      "Break down scripts and build layered characters independently",
+      "Execute blocking, marks, and camera-aware movement",
+      "Maintain rehearsal discipline and professional conduct on set",
+      "Perform under pressure in live and recorded environments",
+      "Collaborate effectively with directors, cast, and crew",
+    ],
+    duration: "2 Years",
+    idealFor: "Aspiring actors with or without prior experience who are ready to commit fully to disciplined performance training in the Yoruba film tradition. Serious applicants only — passion and dedication are non-negotiable.",
   },
   {
     name: "Scriptwriting",
     value: "Scriptwriting",
+    slug: "scriptwriting",
+    heroImage: "/media/programmes/founder-directing-with-script.jpg",
     summary: "Develop compelling Yoruba stories with commercial pull and cultural depth.",
     description:
       "From logline to final draft, writers are guided through structure, dialogue, pacing, and how to shape scripts that can move directly into production.",
+    detailedDescription: [
+      "A great Yoruba film starts with a great story. The Scriptwriting programme at D'Icon School trains writers to develop original screenplays that can move directly from the page to production — stories with cultural resonance, commercial viability, and emotional truth.",
+      "Students learn the craft of screenplay structure, scene construction, dialogue that sounds natural to Yoruba audiences, and the pacing required to hold attention across feature-length and series formats. The programme draws on the storytelling traditions that have powered the biggest hits in Yoruba cinema.",
+      "Every writer completes the programme with at least one production-ready screenplay and practical experience in script-to-screen collaboration, having worked alongside directors and actors in the D'Icon training environment.",
+    ],
+    curriculum: [
+      "Story concept development and logline writing",
+      "Three-act structure and screenplay formatting",
+      "Dialogue craft — authenticity, rhythm, and subtext",
+      "Character arcs and ensemble writing",
+      "Scene-level construction and pacing",
+      "Adapting stories for series vs. feature formats",
+      "Working with directors — script-to-screen translation",
+      "Revision, feedback, and rewriting discipline",
+    ],
+    learningOutcomes: [
+      "Write production-ready screenplays in standard format",
+      "Develop original stories with cultural depth and audience appeal",
+      "Craft dialogue that is natural, impactful, and performance-ready",
+      "Structure narratives for both feature films and episodic series",
+      "Collaborate with directors and actors during script development",
+      "Receive and incorporate professional-level creative feedback",
+    ],
+    duration: "2 Years",
+    idealFor: "Storytellers, aspiring screenwriters, and creatives who want to write for Yoruba cinema. Whether you write fiction, poetry, or have never written before — if you have stories to tell, this programme will give you the craft to tell them professionally.",
   },
   {
     name: "Film Directing",
     value: "Film Directing",
+    slug: "film-directing",
+    heroImage: "/media/programmes/film-directing-hero.jpg",
     summary: "Learn to lead actors, visualise scenes, and translate story into screen language.",
     description:
       "Directing students study coverage, tone, performance notes, shot planning, and the practical decisions needed to run a working set with confidence.",
+    detailedDescription: [
+      "Directing is leadership. At D'Icon School, directing students learn not just the technical language of cinema — shot sizes, coverage patterns, editing rhythms — but the human skill of drawing truthful performances from actors and keeping a production moving with clarity and control.",
+      "Ibrahim Yekini's approach to directing is hands-on and production-tested. Students study the decisions that shape real shoots: how to set tone, how to communicate with actors, how to plan coverage that serves the story, and how to make confident choices under pressure.",
+      "By the end of the programme, every directing student has led at least one multi-scene production exercise, working with real actors, real crew, and real deadlines. This is where the abstract becomes practical — and where future filmmakers find their voice.",
+    ],
+    curriculum: [
+      "Director's vision — tone, mood, and visual storytelling",
+      "Shot planning, coverage strategies, and storyboarding",
+      "Working with actors — performance notes and rehearsal direction",
+      "Blocking and staging for camera",
+      "On-set leadership and crew communication",
+      "Continuity, pacing, and editorial thinking",
+      "Directing for different genres — drama, action, epic",
+      "Post-production awareness for directors",
+    ],
+    learningOutcomes: [
+      "Translate a written script into a clear visual plan",
+      "Direct actors with specific, actionable performance notes",
+      "Plan and execute coverage for multi-scene sequences",
+      "Lead a set with confidence, clarity, and professional authority",
+      "Make creative decisions under time and budget pressure",
+      "Collaborate with writers, producers, and editors effectively",
+    ],
+    duration: "2 Years",
+    idealFor: "Aspiring filmmakers who want to tell stories through the camera. Whether you come from acting, writing, or have no prior industry experience, this programme is for those who are ready to take creative command of a production.",
   },
   {
     name: "Film Production",
     value: "Film Production",
+    slug: "film-production",
+    heroImage: "/media/programmes/production-crew-on-set.jpg",
     summary: "Understand budgeting, scheduling, crew coordination, and the realities of finishing a film.",
     description:
       "This track prepares students to move projects from idea to release through strong planning, set organisation, post-production awareness, and distribution thinking.",
+    detailedDescription: [
+      "Every great film needs someone who can get it made. The Film Production programme at D'Icon School trains the planners, coordinators, and creative producers who turn scripts into finished products — on time, on budget, and at a standard audiences will respect.",
+      "Students learn the full production cycle: pre-production planning, budgeting, scheduling, location scouting, crew coordination, on-set management, and the basics of post-production and distribution. The programme is built around the realities of Nigerian filmmaking — resourceful, fast-moving, and commercially minded.",
+      "By completion, production students have managed at least one end-to-end project exercise, coordinating cast, crew, and logistics under real-world constraints. This is the programme for people who want to build the infrastructure that makes great films possible.",
+    ],
+    curriculum: [
+      "Pre-production planning and project management",
+      "Budgeting, cost control, and resource allocation",
+      "Scheduling and call-sheet creation",
+      "Location scouting and logistics coordination",
+      "On-set production management and crew leadership",
+      "Post-production workflow — editing, sound, and delivery",
+      "Distribution strategy — cinema, streaming, and YouTube",
+      "Legal basics — contracts, rights, and talent agreements",
+    ],
+    learningOutcomes: [
+      "Plan and manage a film production from concept to delivery",
+      "Create realistic budgets and production schedules",
+      "Coordinate cast, crew, and locations with professional efficiency",
+      "Manage on-set operations under real-time pressure",
+      "Understand post-production pipelines and delivery formats",
+      "Think commercially about distribution and audience reach",
+    ],
+    duration: "2 Years",
+    idealFor: "Organisers, planners, and business-minded creatives who want to work behind the scenes in Yoruba cinema. If you care about getting things done right, managing teams, and making films happen — this is your track.",
   },
 ];
 
@@ -301,6 +416,12 @@ export const CONTACT_LINKS: ContactLink[] = [
 ];
 
 export const PROGRAMME_INTERESTS: string[] = PROGRAMMES.map((programme: Programme): string => programme.value);
+
+export const PROGRAMME_SLUGS: string[] = PROGRAMMES.map((programme: Programme): string => programme.slug);
+
+export function getProgrammeBySlug(slug: string): Programme | undefined {
+  return PROGRAMMES.find((programme: Programme): boolean => programme.slug === slug);
+}
 
 export const REFERRAL_SOURCES: string[] = [
   "Instagram",

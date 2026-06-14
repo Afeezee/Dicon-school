@@ -92,7 +92,7 @@ export default function SectionHeader({
       </motion.div>
 
       <motion.h2
-        className="max-w-4xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] text-[#fff6e8]"
+        className="max-w-4xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] text-dicon-text"
         variants={titleVariants}
       >
         {renderTitle(title)}

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { PROGRAMMES, SCHOOL_FAQS, WHY_DICON_REASONS, type FAQItem, type Programme, type ReasonItem } from "@/lib/constants";
-import { Camera, Clapperboard, Film, PenSquare } from "lucide-react";
+import { Camera, ChevronRight, Clapperboard, Film, PenSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
@@ -40,15 +40,20 @@ export default function SchoolPageContent(): ReactElement {
                 viewport={{ once: true, amount: 0.15 }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <Card className="h-full border-t-2 border-t-gold/65">
-                  <CardContent className="flex h-full flex-col gap-5 p-6">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold/10 text-gold-light">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <CardTitle>{programme.name}</CardTitle>
-                    <CardDescription>{programme.description}</CardDescription>
-                  </CardContent>
-                </Card>
+                <Link href={`/school/${programme.slug}`} className="block h-full group">
+                  <Card className="h-full border-t-2 border-t-gold/65 transition-all duration-300 hover:-translate-y-1 hover:border-t-gold hover:shadow-[0_8px_30px_rgba(200,168,75,0.15)] hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+                    <CardContent className="flex h-full flex-col gap-5 p-6">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold/10 text-gold-light transition-colors group-hover:bg-gold/20">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <CardTitle className="transition-colors group-hover:text-gold-light">{programme.name}</CardTitle>
+                      <CardDescription className="flex-1">{programme.summary}</CardDescription>
+                      <div className="mt-2 flex items-center text-sm font-medium text-gold-light opacity-0 transition-opacity group-hover:opacity-100">
+                        Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             );
           })}
@@ -95,7 +100,7 @@ export default function SchoolPageContent(): ReactElement {
       </section>
 
       <section className="section-padding py-0">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-gold/25 bg-[linear-gradient(135deg,rgba(200,168,75,0.14),rgba(139,105,20,0.08),rgba(10,10,10,0.65))] p-8 lg:flex lg:items-center lg:justify-between lg:p-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-gold/25 bg-[linear-gradient(135deg,rgba(200,168,75,0.16),rgba(139,105,20,0.08),rgba(245,240,232,0.7))] dark:bg-[linear-gradient(135deg,rgba(200,168,75,0.14),rgba(139,105,20,0.08),rgba(10,10,10,0.65))] p-8 lg:flex lg:items-center lg:justify-between lg:p-10">
           <div className="max-w-2xl space-y-3">
             <p className="font-accent text-sm uppercase tracking-[0.3em] text-gold-light">Admissions</p>
             <h2 className="font-display text-4xl leading-tight text-dicon-text">Admissions are open - apply today.</h2>

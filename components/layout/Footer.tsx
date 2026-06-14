@@ -36,7 +36,7 @@ export default function Footer(): ReactElement {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div className="space-y-5">
             <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-light">{"D'Icon School of Performing Arts"}</p>
-            <h2 className="max-w-lg font-display text-3xl leading-tight text-[#fff7eb]">
+            <h2 className="max-w-lg font-display text-3xl leading-tight text-dicon-text">
               Cinematic training for the next generation of Yoruba screen icons.
             </h2>
             <p className="max-w-xl text-lg leading-relaxed text-dicon-muted">
@@ -48,7 +48,7 @@ export default function Footer(): ReactElement {
             <p className="font-accent text-sm uppercase tracking-[0.28em] text-gold-light">Explore</p>
             <div className="flex flex-col gap-3">
               {quickLinks.map((link: NavLink): ReactElement => (
-                <Link className="text-base text-[#f1e4ca] transition hover:text-gold-light" href={link.href} key={link.href}>
+                <Link className="text-base text-dicon-text transition hover:text-gold-light" href={link.href} key={link.href}>
                   {link.label}
                 </Link>
               ))}
@@ -60,7 +60,7 @@ export default function Footer(): ReactElement {
             <div className="flex flex-col gap-3">
               {socialLinks.map((link: NavLink): ReactElement => (
                 <a
-                  className="text-base text-[#f1e4ca] transition hover:text-gold-light"
+                  className="text-base text-dicon-text transition hover:text-gold-light"
                   href={link.href}
                   key={link.href}
                   rel="noreferrer"

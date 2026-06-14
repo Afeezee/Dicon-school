@@ -4,22 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Light theme (root default, overridden by .dark) ===== */
 :root {
+  --background: #fdfbf7;
+  --foreground: #1c1408;
+  --surface: #f0ebe2;
+  --card: #ffffff;
+  --border: #ddd5c7;
+  --gold: #c8a84b;
+  --gold-light: #9a7a25;
+  --gold-dark: #8b6914;
+  --gold-muted: #8a7030;
+  --crimson: #b22222;
+  --crimson-dark: #821616;
+  --text-muted: #7a6b55;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  --font-accent: "Bebas Neue", Impact, sans-serif;
+
+  --dicon-bg: #fdfbf7;
+  --dicon-surface: #f0ebe2;
+  --dicon-card: #ffffff;
+  --dicon-border: #ddd5c7;
+  --dicon-text: #1c1408;
+  --dicon-muted: #7a6b55;
+}
+
+/* ===== Dark theme ===== */
+.dark {
   --background: #0a0a0a;
   --foreground: #fff6e7;
   --surface: #12161c;
   --card: #17110e;
   --border: #303640;
-  --gold: #c8a84b;
-  --gold-light: #f1d98e;
-  --gold-dark: #9a7220;
-  --gold-muted: #ad9150;
-  --crimson: #b22222;
-  --crimson-dark: #821616;
+  --gold-light: #E8C96A;
+  --gold-muted: #7A6530;
   --text-muted: #dacdb4;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "Cormorant Garamond", Georgia, serif;
-  --font-accent: "Bebas Neue", Impact, sans-serif;
+
+  --dicon-bg: #0a0a0a;
+  --dicon-surface: #141414;
+  --dicon-card: #1a1a1a;
+  --dicon-border: #2a2a2a;
+  --dicon-text: #f0e8d0;
+  --dicon-muted: #9a8870;
 }
 
 html {
@@ -28,14 +55,25 @@ html {
 
 body {
   color: var(--foreground);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  background: var(--dicon-bg);
+  background-attachment: fixed;
+}
+
+.dark body {
   background:
     radial-gradient(circle at top left, rgba(232, 201, 106, 0.16), transparent 24%),
     radial-gradient(circle at 84% 12%, rgba(178, 34, 34, 0.16), transparent 26%),
     linear-gradient(180deg, #050608 0%, #090b10 32%, #0a0a0a 100%);
-  font-family: var(--font-body);
-  min-height: 100vh;
-  text-rendering: optimizeLegibility;
-  background-attachment: fixed;
+}
+
+html:not(.dark) body {
+  background:
+    radial-gradient(circle at top left, rgba(200, 168, 75, 0.06), transparent 30%),
+    radial-gradient(circle at 84% 12%, rgba(178, 34, 34, 0.03), transparent 30%),
+    var(--dicon-bg);
 }
 
 * {
@@ -65,7 +103,7 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
+  background: #C8A84B;
   color: var(--background);
 }
 
@@ -130,6 +168,32 @@ body {
     box-shadow: 0 0 0 1px rgba(241, 217, 142, 0.18), 0 24px 70px rgba(200, 168, 75, 0.18);
   }
 
+  html:not(.dark) .gold-border-glow {
+    box-shadow: 0 0 0 1px rgba(200, 168, 75, 0.2), 0 12px 40px rgba(200, 168, 75, 0.1);
+  }
+
+  /* Restore dark styling inside .dark context sections (hero, image overlays) in light mode */
+  html:not(.dark) .dark .glass-panel {
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05) 34%, rgba(12, 12, 12, 0.72) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  html:not(.dark) .dark .glass-panel-strong {
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08) 28%, rgba(7, 7, 7, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 28px 100px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  html:not(.dark) .dark .shadow-lifted {
+    box-shadow: 0 26px 90px rgba(0, 0, 0, 0.34);
+  }
+
+  html:not(.dark) .dark .gold-border-glow {
+    box-shadow: 0 0 0 1px rgba(241, 217, 142, 0.18), 0 24px 70px rgba(200, 168, 75, 0.18);
+  }
+
+  /* Glass panels — dark mode (default definitions) */
   .glass-panel {
     background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05) 34%, rgba(12, 12, 12, 0.72) 100%);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -144,8 +208,25 @@ body {
     backdrop-filter: blur(28px);
   }
 
+  /* Glass panels — light mode */
+  html:not(.dark) .glass-panel {
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.65) 34%, rgba(245, 240, 232, 0.92) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  html:not(.dark) .glass-panel-strong {
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78) 28%, rgba(245, 240, 232, 0.96) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
   .shadow-lifted {
     box-shadow: 0 26px 90px rgba(0, 0, 0, 0.34);
+  }
+
+  html:not(.dark) .shadow-lifted {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   }
 
   .text-shadow-hero {
