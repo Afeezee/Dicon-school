@@ -60,12 +60,12 @@ export default function BiographySection(): ReactElement {
           <div className="rounded-[1.75rem] border border-black/10 bg-[radial-gradient(circle_at_top,rgba(200,168,75,0.14),transparent_42%),rgba(255,255,255,0.92)] p-6 dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,rgba(232,201,106,0.12),transparent_38%),rgba(12,12,12,0.78)]">
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div className="space-y-2">
-                <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-light">Awards and nominations</p>
+                <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-dark dark:text-gold-light">Awards and nominations</p>
                 <p className="max-w-2xl text-lg leading-relaxed text-dicon-muted">
                   A concise record of Ibrahim Yekini&apos;s acting and producing recognition across key releases.
                 </p>
               </div>
-              <Badge className="w-fit text-dicon-text" variant="secondary">
+              <Badge className="w-fit border-black/10 bg-white/70 text-dicon-text dark:border-white/12 dark:bg-white/[0.08]" variant="secondary">
                 {`${FOUNDER_RECOGNITIONS.length} recognitions`}
               </Badge>
             </div>
@@ -73,13 +73,13 @@ export default function BiographySection(): ReactElement {
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {FOUNDER_RECOGNITIONS.map((recognition: FounderRecognition): ReactElement => (
                 <Card
-                  className="border-black/10 bg-white/80 shadow-none dark:border-white/10 dark:bg-black/25"
+                  className="border-black/10 bg-white shadow-[0_14px_40px_rgba(28,20,8,0.06)] dark:border-white/10 dark:bg-black/25 dark:shadow-none"
                   key={`${recognition.year}-${recognition.award}-${recognition.category}`}
                 >
                   <CardContent className="space-y-3 p-5">
                     <div className="flex items-center justify-between gap-3">
-                      <p className="font-accent text-sm uppercase tracking-[0.24em] text-gold-light">{recognition.year}</p>
-                      <Badge variant={recognition.result === "Won" ? "default" : "outline"}>{recognition.result}</Badge>
+                      <p className="font-accent text-sm uppercase tracking-[0.24em] text-gold-dark dark:text-gold-light">{recognition.year}</p>
+                      <Badge className="text-gold-dark dark:text-gold-light" variant={recognition.result === "Won" ? "default" : "outline"}>{recognition.result}</Badge>
                     </div>
 
                     <div className="space-y-1">
