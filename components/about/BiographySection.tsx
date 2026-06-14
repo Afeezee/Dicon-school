@@ -57,7 +57,7 @@ export default function BiographySection(): ReactElement {
             </p>
           ))}
 
-          <div className="rounded-[1.75rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(232,201,106,0.12),transparent_38%),rgba(12,12,12,0.78)] p-6">
+          <div className="rounded-[1.75rem] border border-black/10 bg-[radial-gradient(circle_at_top,rgba(200,168,75,0.14),transparent_42%),rgba(255,255,255,0.92)] p-6 dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,rgba(232,201,106,0.12),transparent_38%),rgba(12,12,12,0.78)]">
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div className="space-y-2">
                 <p className="font-accent text-sm uppercase tracking-[0.32em] text-gold-light">Awards and nominations</p>
@@ -65,14 +65,17 @@ export default function BiographySection(): ReactElement {
                   A concise record of Ibrahim Yekini&apos;s acting and producing recognition across key releases.
                 </p>
               </div>
-              <Badge className="w-fit" variant="secondary">
+              <Badge className="w-fit text-dicon-text" variant="secondary">
                 {`${FOUNDER_RECOGNITIONS.length} recognitions`}
               </Badge>
             </div>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {FOUNDER_RECOGNITIONS.map((recognition: FounderRecognition): ReactElement => (
-                <Card className="border-white/10 bg-black/25 shadow-none" key={`${recognition.year}-${recognition.award}-${recognition.category}`}>
+                <Card
+                  className="border-black/10 bg-white/80 shadow-none dark:border-white/10 dark:bg-black/25"
+                  key={`${recognition.year}-${recognition.award}-${recognition.category}`}
+                >
                   <CardContent className="space-y-3 p-5">
                     <div className="flex items-center justify-between gap-3">
                       <p className="font-accent text-sm uppercase tracking-[0.24em] text-gold-light">{recognition.year}</p>
@@ -83,7 +86,7 @@ export default function BiographySection(): ReactElement {
                       <p className="font-display text-xl leading-tight text-dicon-text">
                         <RecognitionLink href={recognition.awardUrl} label={recognition.award} />
                       </p>
-                      <p className="text-sm uppercase tracking-[0.18em] text-[#e6d2a0]">{recognition.category}</p>
+                      <p className="text-sm uppercase tracking-[0.18em] text-gold dark:text-[#e6d2a0]">{recognition.category}</p>
                     </div>
 
                     {recognition.film ? (
