@@ -16,6 +16,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, type ReactElement, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 type AdminNavItem = {
@@ -104,9 +105,9 @@ export default function AdminShell({ children }: AdminShellProps): ReactElement 
   }
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#050505_0%,#090909_38%,#0f0f0f_100%)] text-dicon-text">
+    <div className="min-h-screen bg-dicon-bg text-dicon-text dark:bg-[linear-gradient(180deg,#06070a_0%,#0a0b10_42%,#0a0b0e_100%)]">
       <div className="flex min-h-screen">
-        <aside className="hidden w-[20rem] shrink-0 border-r border-dicon-border/80 bg-black/55 lg:flex lg:flex-col">
+        <aside className="hidden w-[20rem] shrink-0 border-r border-dicon-border/80 bg-dicon-surface/80 lg:flex lg:flex-col">
           <div className="border-b border-dicon-border/80 px-6 py-6">
             <Link className="flex flex-col gap-2" href="/admin">
               <span className="font-accent text-xs uppercase tracking-[0.35em] text-gold-light">D&apos;Icon School</span>
@@ -152,33 +153,40 @@ export default function AdminShell({ children }: AdminShellProps): ReactElement 
           </nav>
 
           <div className="border-t border-dicon-border/80 px-6 py-5">
-            <p className="font-accent text-xs uppercase tracking-[0.24em] text-gold-light">Admin access</p>
+            <div className="flex items-center justify-between gap-4">
+              <p className="font-accent text-xs uppercase tracking-[0.24em] text-gold-light">Appearance</p>
+              <ThemeToggle />
+            </div>
+            <p className="mt-4 font-accent text-xs uppercase tracking-[0.24em] text-gold-light">Admin access</p>
             <p className="mt-3 text-sm leading-relaxed text-dicon-muted">Access is limited to approved school staff accounts.</p>
           </div>
         </aside>
 
         <div className="flex min-h-screen min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b border-dicon-border/80 bg-black/70 backdrop-blur-xl lg:hidden">
+          <header className="sticky top-0 z-40 border-b border-dicon-border/80 bg-dicon-surface/90 backdrop-blur-xl lg:hidden">
             <div className="flex items-center justify-between px-5 py-4">
               <div className="min-w-0">
                 <p className="font-accent text-[11px] uppercase tracking-[0.3em] text-gold-light">D&apos;Icon School</p>
                 <p className="truncate font-display text-2xl italic text-dicon-text">Admin Studio</p>
               </div>
 
-              <Button
-                aria-controls="admin-mobile-navigation"
-                aria-expanded={isMobileNavOpen}
-                onClick={(): void => setIsMobileNavOpen((currentValue: boolean): boolean => !currentValue)}
-                size="icon"
-                type="button"
-                variant="outline"
-              >
-                {isMobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <Button
+                  aria-controls="admin-mobile-navigation"
+                  aria-expanded={isMobileNavOpen}
+                  onClick={(): void => setIsMobileNavOpen((currentValue: boolean): boolean => !currentValue)}
+                  size="icon"
+                  type="button"
+                  variant="outline"
+                >
+                  {isMobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
+              </div>
             </div>
 
             {isMobileNavOpen ? (
-              <div className="border-t border-dicon-border/80 bg-[#080808]/95 px-4 py-4" id="admin-mobile-navigation">
+              <div className="border-t border-dicon-border/80 bg-dicon-surface px-4 py-4" id="admin-mobile-navigation">
                 <nav className="space-y-2">
                   {adminNavigation.map((item: AdminNavItem): ReactElement => {
                     const active: boolean = isActivePath(pathname, item.href);

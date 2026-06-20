@@ -216,7 +216,7 @@ export default function MediaUploadField({
   }
 
   return (
-    <div className="rounded-[1.25rem] border border-dicon-border bg-black/20 p-3">
+    <div className="rounded-[1.25rem] border border-dicon-border bg-dicon-surface/60 p-3">
       <input
         accept={kind === "image" ? "image/*" : "video/*"}
         className="hidden"

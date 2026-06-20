@@ -89,7 +89,7 @@ export default function MessagesBoard({ messages: initialMessages }: MessagesBoa
   return (
     <div className="space-y-8">
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card className="border-gold/20 bg-[linear-gradient(160deg,rgba(200,168,75,0.12),rgba(7,7,7,0.96))]">
+        <Card className="border-gold/20 admin-hero">
           <CardContent className="flex items-center gap-5 p-6">
             <div className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/35 bg-gold/10 text-gold-light">
               <MessageSquareText className="h-6 w-6" />

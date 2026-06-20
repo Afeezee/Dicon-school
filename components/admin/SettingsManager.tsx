@@ -65,7 +65,7 @@ export default function SettingsManager({ settings }: SettingsManagerProps): Rea
 
   return (
     <div className="space-y-8">
-      <Card className="border-gold/20 bg-[linear-gradient(160deg,rgba(200,168,75,0.12),rgba(7,7,7,0.96))]">
+      <Card className="border-gold/20 admin-hero">
         <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-4">
             <Badge>Settings</Badge>

@@ -41,12 +41,12 @@
   --gold-muted: #7A6530;
   --text-muted: #dacdb4;
 
-  --dicon-bg: #0a0a0a;
-  --dicon-surface: #141414;
-  --dicon-card: #1a1a1a;
-  --dicon-border: #2a2a2a;
-  --dicon-text: #f0e8d0;
-  --dicon-muted: #9a8870;
+  --dicon-bg: #0a0b0e;
+  --dicon-surface: #15171d;
+  --dicon-card: #1d2027;
+  --dicon-border: #353c49;
+  --dicon-text: #f4edda;
+  --dicon-muted: #b6a78a;
 }
 
 html {
@@ -231,5 +231,26 @@ html:not(.dark) body {
 
   .text-shadow-hero {
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.48);
+  }
+
+  /* ===== Admin dashboard — theme-aware surfaces ===== */
+
+  /* Gold hero banner used across admin pages. Dark mode fades into an
+     elevated dark surface; light mode fades into the cream palette. */
+  .admin-hero {
+    background-image: linear-gradient(160deg, rgba(200, 168, 75, 0.18), rgba(21, 23, 29, 0.96));
+  }
+
+  html:not(.dark) .admin-hero {
+    background-image: linear-gradient(160deg, rgba(200, 168, 75, 0.16), rgba(255, 255, 255, 0.92) 55%, rgba(240, 235, 226, 0.97));
+  }
+
+  /* Loading skeleton blocks — visible against either background. */
+  .admin-skeleton {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  html:not(.dark) .admin-skeleton {
+    background-color: rgba(28, 20, 8, 0.08);
   }
 }

@@ -50,7 +50,7 @@ export default function AdminLoginForm({ isConfigured, redirectedFrom }: AdminLo
   return (
     <section className="section-padding pt-10">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <Card className="border-gold/20 bg-[linear-gradient(145deg,rgba(200,168,75,0.12),rgba(20,20,20,1))]">
+        <Card className="admin-hero border-gold/20">
           <CardContent className="flex h-full flex-col justify-between gap-8 p-8">
             <div className="space-y-5">
               <p className="font-accent text-sm uppercase tracking-[0.3em] text-gold-light">Admin Portal</p>
@@ -61,11 +61,11 @@ export default function AdminLoginForm({ isConfigured, redirectedFrom }: AdminLo
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.5rem] border border-dicon-border bg-black/15 p-5">
+              <div className="rounded-[1.5rem] border border-dicon-border bg-dicon-surface/60 p-5">
                 <p className="font-accent text-xs uppercase tracking-[0.24em] text-gold-light">Private Access</p>
                 <p className="mt-3 text-base leading-relaxed text-dicon-muted">This area opens only after a successful staff sign-in.</p>
               </div>
-              <div className="rounded-[1.5rem] border border-dicon-border bg-black/15 p-5">
+              <div className="rounded-[1.5rem] border border-dicon-border bg-dicon-surface/60 p-5">
                 <p className="font-accent text-xs uppercase tracking-[0.24em] text-gold-light">Workflow</p>
                 <p className="mt-3 text-base leading-relaxed text-dicon-muted">Review new applications, reply to messages, and keep school updates moving for the team.</p>
               </div>
